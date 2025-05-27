@@ -1,0 +1,1572 @@
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none; /* Hide default cursor for custom cursor */
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+:root {
+  /* Intel Brand Colors with our aesthetic */
+  --bg-main: #f5f0e8; /* Light beige background */
+  --bg-secondary: #e6dfd3; /* Slightly darker beige */
+  --text-dark: #0068b5; /* Intel blue for important text */
+  --text-secondary: #00285c; /* Darker Intel blue for secondary text */
+  
+  /* Accent colors - Intel sustainability themed */
+  --accent-green: #00a291; /* Intel teal/green */
+  --accent-blue: #0068b5; /* Intel blue */
+  --accent-brown: #a67c52; /* Earth tone */
+  --accent-highlight: #00c7b1; /* Brighter Intel teal */
+  
+  /* UI Elements */
+  --card-shadow: 0 20px 60px rgba(0, 104, 181, 0.1);
+  --card-border: rgba(0, 104, 181, 0.1);
+  
+  /* Animation Speeds */
+  --transition-slow: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-medium: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-weight: 300;
+  /* Make sure we have enough scrolling space */
+  height: 2000vh;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-green);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  transition: width 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28), 
+              height 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28), 
+              opacity 0.6s;
+}
+
+/* Interactive elements should change cursor */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+a:hover ~ .cursor,
+button:hover ~ .cursor,
+[role="button"]:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: var(--accent-highlight);
+}
+
+/* Hero Section - Large Text Treatment */
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible; /* Changed from hidden to visible */
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--transition-slow), visibility var(--transition-slow);
+  padding-bottom: 5vh; /* Added padding at the bottom */
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--bg-main);
+}
+
+/* Floating sustainability elements */
+.floating-element {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+}
+
+.eco-icon {
+  font-size: 2.5rem;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+.floating-element:hover .eco-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.hero-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;
+  height: 35vw;
+  z-index: 0;
+}
+
+.rotating-object {
+  width: 100%;
+  height: 100%;
+  background-image: url('img/plant-wireframe.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform var(--transition-medium);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 10%;
+  margin-bottom: 1.5rem; /* Add margin at the bottom for more space */
+}
+
+/* Intel logo container */
+.intel-logo-container {
+  margin-bottom: 2rem;
+  max-width: 200px;
+}
+
+.intel-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 10vw, 10vw); /* Responsive font size */
+  font-weight: 800;
+  line-height: 0.95; /* Slightly increased line height */
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 2.5rem; /* Increased bottom margin */
+  text-transform: uppercase;
+  transform: translateY(0);
+  transition: transform var(--transition-medium);
+  overflow: visible; /* Changed from 'hidden' to prevent cutting off */
+}
+
+.hero-title .line {
+  display: block;
+  overflow: visible; /* Changed from 'hidden' to prevent cutting off */
+  margin-bottom: 0.5rem; /* Added space between lines */
+}
+
+.hero-title .line:nth-child(2) {
+  margin-left: 10%;
+  padding-bottom: 0.1em; /* Add padding to prevent cutting off */
+}
+
+.hero-title .word {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: wordReveal 1s forwards;
+}
+
+.hero-title .word:nth-child(1) { animation-delay: 0.1s; }
+.hero-title .word:nth-child(2) { animation-delay: 0.2s; }
+.hero-title .word:nth-child(3) { animation-delay: 0.3s; }
+.hero-title .word:nth-child(4) { animation-delay: 0.4s; }
+
+.hero-description {
+  font-size: clamp(1rem, 4vw, 1.6rem); /* Responsive font size */
+  max-width: 600px;
+  margin-left: 10%;
+  color: var(--text-secondary);
+  font-weight: 300;
+  transform: translateY(0);
+  opacity: 0;
+  animation: fadeIn 1s 0.8s forwards;
+  padding-bottom: 2rem; /* Added padding at the bottom */
+}
+
+/* Horizontal Scrolling Text */
+.horizontal-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: opacity var(--transition-slow), visibility var(--transition-slow);
+}
+
+.horizontal-text.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrolling-text {
+  font-size: clamp(3rem, 15vw, 15vw); /* Responsive font size */
+  font-weight: 800;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  padding-right: 100px;
+  animation: scrollText 30s linear infinite;
+  opacity: 0.1;
+}
+
+/* Scroll progress indicator */
+.scroll-progress-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background-color: rgba(0, 104, 181, 0.1);
+  border-radius: 2px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+
+.scroll-progress-bar.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-progress-indicator {
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-green);
+  border-radius: 2px;
+  transition: width 0.2s;
+}
+
+.scroll-hint {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  transition: opacity var(--transition-medium), visibility var(--transition-medium);
+}
+
+.scroll-hint.active {
+  opacity: 0.6;
+  visibility: visible;
+  animation: pulse 2s infinite;
+}
+
+/* Intel tech elements in horizontal section */
+.tech-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Faster transition for quick disappearance */
+  overflow: hidden;
+}
+
+/* Hide tech elements when timeline is active */
+.timeline-container.active ~ .tech-elements,
+.timeline-container.active ~ .tech-elements .parallax-tech {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.tech-elements.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10; /* Ensure elements are visible above other elements */
+}
+
+/* Ensure SVG elements are more visible */
+.tech-elements.active .floating-processor-1,
+.tech-elements.active .floating-processor-2,
+.tech-elements.active .floating-circuit-1,
+.tech-elements.active .floating-circuit-2 {
+  opacity: 0.8;
+  transition: transform 0.3s ease-out, opacity 0.5s ease-in;
+}
+
+.processor-chip {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 10%;
+  background-image: url('img/processor-chip.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity 1s ease, transform 2s ease;
+  animation: fadeInRotate 1.5s ease forwards 0.5s;
+}
+
+.circuit-board {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  bottom: 15%;
+  right: 10%;
+  background-image: url('img/circuit-board.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 2s ease;
+  animation: fadeInUp 1.5s ease forwards 1s;
+}
+
+.processor-small {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 25%;
+  background-image: url('img/processor-chip.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: rotate(-15deg) scale(0.8);
+  transition: opacity 1s ease, transform 2s ease;
+  animation: fadeInRotate 1.5s ease forwards 1.5s;
+}
+
+.circuit-small {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 30%;
+  right: 25%;
+  background-image: url('img/circuit-board.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateY(30px) rotate(15deg);
+  transition: opacity 1s ease, transform 2s ease;
+  animation: fadeInUp 1.5s ease forwards 2s;
+}
+
+/* New animated elements for horizontal section */
+.floating-processor-1 {
+  position: absolute;
+  width: clamp(80px, 15vw, 160px); /* Responsive size */
+  height: clamp(80px, 15vw, 160px); /* Responsive size */
+  top: 20%;
+  left: 30%;
+  background-image: url('img/processor-chip.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform-origin: center center;
+  z-index: 15; /* Ensure it appears above other elements */
+  box-shadow: 0 0 40px rgba(0, 199, 253, 0.3); /* Add glow effect */
+  filter: drop-shadow(0 0 15px rgba(0, 104, 181, 0.5));
+  animation: spinProcessor 15s linear infinite, floatElementEnhanced 8s ease-in-out infinite, fadeIn 2s forwards 2.2s;
+}
+
+.floating-processor-2 {
+  position: absolute;
+  width: clamp(70px, 13vw, 140px); /* Responsive size */
+  height: clamp(70px, 13vw, 140px); /* Responsive size */
+  bottom: 30%;
+  left: 60%;
+  background-image: url('img/processor-chip.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform-origin: center center;
+  z-index: 14; /* Ensure it appears above other elements but below processor-1 */
+  box-shadow: 0 0 30px rgba(0, 199, 253, 0.25); /* Add glow effect */
+  filter: drop-shadow(0 0 10px rgba(0, 104, 181, 0.4));
+  animation: spinProcessorReverse 20s linear infinite, floatElementEnhanced 6s ease-in-out infinite 1s, fadeIn 2s forwards 2.5s;
+}
+
+.floating-circuit-1 {
+  position: absolute;
+  width: clamp(50px, 10vw, 100px); /* Responsive size */
+  height: clamp(50px, 10vw, 100px); /* Responsive size */
+  top: 60%;
+  left: 15%;
+  background-image: url('img/circuit-board.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform-origin: center center;
+  animation: spinCircuit 18s linear infinite, floatElement 7s ease-in-out infinite 0.5s, fadeIn 2s forwards 2.8s;
+}
+
+.floating-circuit-2 {
+  position: absolute;
+  width: clamp(35px, 7vw, 70px); /* Responsive size */
+  height: clamp(35px, 7vw, 70px); /* Responsive size */
+  top: 25%;
+  right: 15%;
+  background-image: url('img/circuit-board.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform-origin: center center;
+  animation: spinCircuitReverse 25s linear infinite, floatElement 9s ease-in-out infinite 1.5s, fadeIn 2s forwards 3s;
+}
+
+@keyframes spinProcessor {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.05); }
+  50% { transform: rotate(180deg) scale(1); }
+  75% { transform: rotate(270deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes spinProcessorReverse {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-90deg) scale(1.05); }
+  50% { transform: rotate(-180deg) scale(1); }
+  75% { transform: rotate(-270deg) scale(1.05); }
+  100% { transform: rotate(-360deg) scale(1); }
+}
+
+@keyframes floatElementEnhanced {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(0, 104, 181, 0.5));
+  }
+  25% {
+    filter: drop-shadow(0 0 25px rgba(0, 199, 253, 0.7));
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+    filter: drop-shadow(0 0 35px rgba(0, 104, 181, 0.8));
+  }
+  75% {
+    filter: drop-shadow(0 0 25px rgba(0, 199, 253, 0.7));
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(0, 104, 181, 0.5));
+  }
+}
+
+@keyframes spinCircuit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinCircuitReverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Removed intel-icon */
+
+.tech-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-dark);
+  font-size: clamp(1.2rem, 5vw, 2rem); /* Responsive font size */
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards 2.5s;
+  width: 90%; /* Limit width for small screens */
+}
+
+.tech-tagline span {
+  display: block;
+  font-size: clamp(0.9rem, 3vw, 1.2rem); /* Responsive font size */
+  color: var(--accent-green);
+  margin-top: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards 3s;
+}
+
+/* Parallax effect for tech elements */
+.parallax-tech {
+  position: absolute;
+  transition: transform 0.5s ease-out;
+}
+
+.rotate-element {
+  animation: rotateOnScroll 12s linear infinite;
+  transform-origin: center center;
+}
+
+.floating-processor-1.rotate-element {
+  animation-duration: 15s;
+  animation-direction: reverse;
+}
+
+.floating-processor-2.rotate-element {
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+
+.floating-circuit-1.rotate-element {
+  animation-duration: 18s;
+  animation-delay: 1s;
+}
+
+.floating-circuit-2.rotate-element {
+  animation-duration: 25s;
+  animation-delay: 3s;
+}
+
+@keyframes rotateOnScroll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for tech elements */
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.8);
+  }
+  100% {
+    opacity: 0.8;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatElement {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes pulseGrow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Timeline Section */
+.timeline-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 3;
+}
+
+.timeline-container.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 20; /* Ensure it's above tech elements (z-index: 10) */
+}
+
+/* Intel brand background elements */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 75% 25%, rgba(0, 104, 181, 0.05) 0%, transparent 60%),
+              radial-gradient(circle at 25% 75%, rgba(0, 199, 177, 0.05) 0%, transparent 60%);
+  z-index: -1;
+}
+
+/* Timeline Background Text */
+.timeline-bg-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2; /* Above timeline background but below cards */
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: none;
+}
+
+.timeline-bg-text.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Improved visibility for scrolling text in timeline */
+.intel-bg-text {
+  position: absolute;
+  white-space: nowrap;
+  font-weight: 800;
+  text-transform: uppercase;
+  opacity: 0.15; /* Significantly increased opacity */
+  color: var(--accent-blue);
+  pointer-events: none;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 50px rgba(0, 104, 181, 0.5);
+  left: 0; /* Ensure text starts from left edge */
+  width: max-content; /* Allow text to extend as needed */
+}
+
+.intel-bg-text-1 {
+  top: 20%;
+  font-size: clamp(6rem, 18vw, 18vw); /* Responsive font size */
+  animation: scrollTextBg 60s linear infinite;
+}
+
+.intel-bg-text-2 {
+  bottom: 15%;
+  font-size: clamp(5rem, 15vw, 15vw); /* Responsive font size */
+  animation: scrollTextBg 50s linear infinite reverse;
+}
+
+.intel-bg-text-3 {
+  top: 65%;
+  font-size: clamp(3rem, 10vw, 10vw); /* Responsive font size */
+  animation: scrollTextBg 40s linear infinite;
+  color: var(--accent-green);
+}
+
+/* Ensure text scrolls fully across the screen */
+@keyframes scrollTextBg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Reduced to slow down animation */
+  }
+}
+
+/* Intel brand accent elements */
+.intel-brand-accent {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.intel-accent-1 {
+  width: 400px;
+  height: 400px;
+  background-color: var(--accent-blue);
+  top: -150px;
+  right: -150px;
+}
+
+.intel-accent-2 {
+  width: 300px;
+  height: 300px;
+  background-color: var(--accent-green);
+  bottom: -100px;
+  left: -100px;
+}
+
+.intel-accent-3 {
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent-blue);
+  top: 30%;
+  left: 10%;
+  animation: pulseAccent 8s infinite alternate;
+}
+
+.intel-accent-4 {
+  width: 150px;
+  height: 150px;
+  background-color: var(--accent-green);
+  bottom: 20%;
+  right: 15%;
+  animation: pulseAccent 6s infinite alternate-reverse;
+}
+
+@keyframes pulseAccent {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+}
+
+.interactive-shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 40vw;
+  z-index: 0;
+  will-change: transform;
+}
+
+.shape-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('img/sustainability-shape.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Cards Container */
+.cards-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: visible; /* Changed from hidden to allow text to be visible */
+}
+
+/* Card Styles - New Fullscreen Style */
+.milestone-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(245, 240, 232, 0.6); /* Made more transparent */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease,
+              visibility 0.6s ease;
+  z-index: 5; /* Ensure it's above timeline-bg-text (z-index: 2) */
+}
+
+.milestone-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 5; /* Ensure it's above timeline-bg-text (z-index: 2) */
+  /* Subtle floating effect */
+  animation: floatCard 8s ease-in-out infinite;
+}
+
+.milestone-card.prev {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  z-index: 5;
+}
+
+.milestone-card.next {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  z-index: 5;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.05;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card Content New Style */
+.card-content {
+  position: relative;
+  width: 80%;
+  max-width: 650px; /* Slightly larger card */
+  padding: 2.5rem; /* Increased padding */
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Wider text column */
+  gap: 2rem; /* Increased gap */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 223, 211, 0.9);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  z-index: 10;
+  transform: scale(0.95);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 4px solid var(--accent-blue);
+  height: auto;
+  aspect-ratio: 1/0.9; /* Slightly less tall for better proportions */
+}
+
+.milestone-card.active .card-content {
+  transform: scale(1);
+}
+
+/* Refined card info positioning */
+.card-info {
+  padding-right: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  position: relative;
+  width: 160px; /* Wider to allow more breathing room */
+  height: auto;
+  white-space: nowrap;
+  top: 50%; /* Center vertically */
+  left: -20px; /* Adjusted to move away from edge */
+  margin-top: -30px; /* Offset to truly center */
+}
+
+/* Make year more prominent */
+.year {
+  font-size: clamp(3.2rem, 6vw, 5rem); /* Slightly larger font */
+  font-weight: 800;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem; /* Increased bottom margin */
+  line-height: 0.9;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease;
+  letter-spacing: -0.02em;
+}
+
+.event {
+  font-size: clamp(1.3rem, 2vw, 1.8rem); /* Slightly larger font */
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              opacity 0.6s ease 0.1s;
+}
+
+.milestone-card.active .year {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.milestone-card.active .event {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Make card image container responsive */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+              opacity 0.6s ease 0.2s,
+              box-shadow var(--transition-medium);
+}
+
+.milestone-card.active .card-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card visual container */
+.card-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  background-color: #f5f5f5;
+  width: 100%; /* Full width of grid cell */
+  aspect-ratio: 1/1; /* Square aspect ratio */
+  height: auto;
+  max-width: 100%;
+  justify-self: center; /* Center in grid cell */
+}
+
+.card-visual:hover,
+.card-visual:focus,
+.card-visual:active,
+.card-visual.touch-active {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 104, 181, 0.2);
+}
+
+/* Hover dropup overlay */
+.card-description-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 104, 181, 0.85);
+  color: #fff;
+  padding: 1.5rem;
+  transform: translateY(101%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+  border-radius: 0 0 12px 12px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-sizing: border-box;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+/* Show overlay on hover/touch/focus */
+.card-visual:hover .card-description-overlay,
+.card-visual:focus .card-description-overlay,
+.card-visual:active .card-description-overlay,
+.card-visual.touch-active .card-description-overlay {
+  transform: translateY(0);
+}
+
+/* Style the description text inside the overlay */
+.card-description-overlay .card-description {
+  margin: 0;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.5;
+  font-weight: 400;
+  opacity: 1;
+  transform: none;
+  transition: none;
+  color: #fff;
+}
+
+/* Add a subtle indicator that there's more content on hover */
+.card-visual::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 4;
+}
+
+.card-visual:hover::after {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Rotating Decorative Element */
+.card-decorative-element {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 30px;
+  bottom: 10px;
+  background-image: url('img/sustainability-shape.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotate(0deg);
+  opacity: 0.1;
+  transition: transform 1s ease, opacity 0.5s ease;
+  z-index: 1;
+}
+
+.milestone-card.active .card-decorative-element {
+  opacity: 0.2;
+  animation: rotateElement 30s infinite linear;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.progress-indicator.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.progress-dot.active {
+  background-color: var(--accent-green);
+  transform: scale(1.5);
+}
+
+/* Logo Corner */
+.corner-logo {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 80px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.corner-logo.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Transition Overlay */
+.transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-main);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+}
+
+.transition-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-logo {
+  width: 120px;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes wordReveal {
+  from { 
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rotateElement {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .card-content {
+    grid-template-columns: 110px 1fr; /* Adjusted text column */
+    gap: 1.5rem;
+  }
+  
+  .card-info {
+    left: -15px;
+    width: 140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-content {
+    grid-template-columns: 1fr;
+    width: 85%;
+    max-width: 450px;
+    padding: 2rem;
+    gap: 1.5rem;
+    height: auto;
+    aspect-ratio: auto; /* Remove square aspect ratio */
+  }
+  
+  .card-visual {
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    justify-self: center;
+  }
+  
+  .card-info {
+    transform: rotate(0deg);
+    left: 0;
+    top: 0;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    align-items: center;
+    padding-right: 0;
+    padding-bottom: 0;
+    white-space: normal;
+    width: 100%;
+  }
+  
+  .year {
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
+  
+  .event {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .card-decorative-element {
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+  }
+  
+  .card-description-overlay {
+    padding: 1.2rem;
+  }
+  
+  /* Adjust card transitions for vertical stacking */
+  .milestone-card.prev {
+    transform: translateY(-100%);
+  }
+  
+  .milestone-card.next {
+    transform: translateY(100%);
+  }
+
+  /* Adjust Intel brand accent elements size and position */
+  .intel-brand-accent {
+    opacity: 0.1;
+  }
+  
+  .intel-accent-1 {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .intel-accent-2 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 13vw, 13vw);
+    line-height: 1;
+  }
+  
+  .hero-title .line {
+    margin-bottom: 0.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    margin-left: 5%;
+  }
+  
+  .card-content {
+    padding: 1.8rem;
+    width: 90%;
+    gap: 1rem;
+  }
+  
+  .year {
+    font-size: 4rem;
+  }
+  
+  .event {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .progress-indicator {
+    right: 3%;
+  }
+  
+  .corner-logo {
+    top: 1rem;
+    left: 1rem;
+    width: 40px;
+  }
+  
+  .scrolling-text {
+    font-size: 12vw;
+  }
+  
+  .floating-element {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .eco-icon {
+    font-size: 1.8rem;
+  }
+  
+  .tech-tagline {
+    width: 80%;
+    font-size: 1.5rem;
+    white-space: normal; /* Allow text to wrap */
+  }
+  
+  .tech-tagline span {
+    font-size: 1rem;
+  }
+  
+  /* Adjust Intel background text for mobile */
+  .intel-bg-text-1 {
+    font-size: clamp(4rem, 14vw, 14vw);
+  }
+  
+  .intel-bg-text-2 {
+    font-size: clamp(3.5rem, 12vw, 12vw);
+  }
+  
+ .intel-bg-text-3 {
+    font-size: clamp(2.5rem, 8vw, 8vw);
+  }
+  
+  .card-description-overlay {
+    padding: 1rem;
+    max-height: 80%;
+  }
+  
+  /* Show a partial view of the overlay to hint at its existence */
+  .card-description-overlay {
+    transform: translateY(85%);
+  }
+  
+  /* Show full overlay on touch */
+  .card-visual.touch-active .card-description-overlay {
+    transform: translateY(0);
+  }
+  
+  .card-visual::after {
+    opacity: 1; /* Always show the indicator on mobile */
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Add extra small screen adjustments */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 11vw, 11vw);
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  
+  .year {
+    font-size: 3rem;
+  }
+  
+  .event {
+    font-size: 1.3rem;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+  }
+  
+  .card-image {
+    margin-top: 1rem;
+  }
+  
+  .tech-tagline {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+  
+  .tech-tagline span {
+    font-size: 0.9rem;
+  }
+  
+  /* Further reduce Intel background text for very small screens */
+  .intel-bg-text-1 {
+    font-size: clamp(3rem, 12vw, 12vw);
+  }
+  
+  .intel-bg-text-2 {
+    font-size: clamp(2.5rem, 10vw, 10vw);
+  }
+  
+  .intel-bg-text-3 {
+    font-size: clamp(2rem, 7vw, 7vw);
+  }
+  
+  /* Make sure floating elements don't take up too much space */
+  .floating-processor-1,
+  .floating-processor-2 {
+    transform: scale(0.8);
+  }
+  
+  .floating-circuit-1,
+  .floating-circuit-2 {
+    transform: scale(0.7);
+  }
+}
+
+/* Card hover effect for interactivity requirement */
+.milestone-card:hover .card-content {
+  transform: scale(1.02);
+  box-shadow: 0 30px 70px rgba(0, 104, 181, 0.2);
+}
+
+.milestone-card:hover .card-decorative-element {
+  opacity: 0.3;
+  animation: rotateElement 5s infinite linear;
+}
+
+.milestone-card:hover .year {
+  color: var(--accent-highlight);
+}
+
+/* Progress dot hover effect */
+.progress-dot:hover {
+  background-color: var(--accent-highlight);
+  transform: scale(1.8);
+}
+
+/* Removed Intel powered tag */
+
+/* Make cards appear to "float" over the background */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-10px) translateX(5px); }
+}
+
+/* Add a subtle vertical line to enhance the rotated text effect */
+.card-info::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px; /* Longer line */
+  background-color: var(--accent-blue);
+  opacity: 0.3;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+@media (max-width: 992px) {
+  .card-info::after {
+    display: none;
+  }
+}

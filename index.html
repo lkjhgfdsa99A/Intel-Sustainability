@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainability Journey | Intel Timeline</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-content">
+      <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="loading-logo" />
+      <p class="loading-text">Loading sustainability journey...</p>
+    </div>
+  </div>
+
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transition-overlay"></div>
+
+  <!-- Intel Corner Logo (appears after hero section) -->
+  <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="corner-logo" id="corner-logo" />
+
+  <!-- Horizontal Scrolling Text -->
+  <div class="horizontal-text" id="horizontal-text">
+    <div class="scrolling-text">Sustainability • Innovation • Future • Responsibility • </div>
+    <div class="scrolling-text">Sustainability • Innovation • Future • Responsibility • </div>
+  </div>
+
+  <!-- Timeline Background Scrolling Text -->
+  <div class="timeline-bg-text" id="timeline-bg-text">
+    <div class="intel-bg-text intel-bg-text-1">Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future Intel Innovation Sustainability Technology Future</div>
+    <div class="intel-bg-text intel-bg-text-2">Environmental Social Governance Performance Environmental Social Governance Performance Environmental Social Governance Performance Environmental Social Governance Performance</div>
+    <div class="intel-bg-text intel-bg-text-3">Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling Responsible Inclusive Sustainable Enabling</div>
+  </div>
+
+  <!-- Tech Elements for Horizontal Section -->
+  <div class="tech-elements" id="tech-elements">
+    <div class="processor-chip parallax-tech" data-speed="0.05"></div>
+    <div class="circuit-board parallax-tech" data-speed="-0.03"></div>
+    <div class="processor-small parallax-tech" data-speed="0.07"></div>
+    <div class="circuit-small parallax-tech" data-speed="-0.04"></div>
+    <!-- New floating elements for extended scrolling -->
+    <div class="floating-processor-1 parallax-tech rotate-element" data-speed="0.03"></div>
+    <div class="floating-processor-2 parallax-tech rotate-element" data-speed="-0.02"></div>
+    <div class="floating-circuit-1 parallax-tech rotate-element" data-speed="0.04"></div>
+    <div class="floating-circuit-2 parallax-tech rotate-element" data-speed="-0.06"></div>
+    <div class="tech-tagline">
+      TECHNOLOGY FOR A SUSTAINABLE FUTURE
+      <span>Innovating for the planet since 1968</span>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar">
+    <div class="scroll-progress-indicator" id="scroll-progress-indicator"></div>
+  </div>
+  <div class="scroll-hint" id="scroll-hint">Scroll to explore</div>
+
+  <!-- Header / Hero Section -->
+  <header class="hero" id="hero-section">
+    <!-- Hero background -->
+    <div class="hero-background">
+      <!-- Floating sustainability elements -->
+      <div class="floating-element" style="top: 20%; left: 20%;">
+        <div class="eco-icon">♻️</div>
+      </div>
+      <div class="floating-element" style="top: 70%; left: 80%;">
+        <div class="eco-icon">🌱</div>
+      </div>
+      <div class="floating-element" style="top: 30%; left: 80%;">
+        <div class="eco-icon">🍃</div>
+      </div>
+    </div>
+
+    <!-- Central visual element that rotates on scroll -->
+    <div class="hero-visual">
+      <div class="rotating-object" id="rotating-object"></div>
+    </div>
+    
+    <div class="hero-content">
+      <!-- Intel logo -->
+      <div class="intel-logo-container">
+        <img src="img/intel-sustainability-logo.svg" alt="Intel Sustainability Logo" class="intel-logo" />
+      </div>
+      
+      <!-- Large hero title with animation -->
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Sustainability</span></span>
+        <span class="line"><span class="word">Through</span> <span class="word">Time</span></span>
+      </h1>
+
+      <!-- Subheading / Description -->
+      <p class="hero-description">
+        Explore Intel's journey through time, discovering how our commitment
+        to innovation has shaped a more sustainable future for technology 
+        and our planet.
+      </p>
+    </div>
+  </header>
+
+  <!-- Timeline Section -->
+  <div class="timeline-container" id="timeline-section">
+    
+    <!-- Intel brand accent elements -->
+    <div class="intel-brand-accent intel-accent-1"></div>
+    <div class="intel-brand-accent intel-accent-2"></div>
+    <div class="intel-brand-accent intel-accent-3"></div>
+    <div class="intel-brand-accent intel-accent-4"></div>
+    
+    <!-- Background shape that follows mouse -->
+    <div class="interactive-shape" id="interactive-shape">
+      <div class="shape-container">
+        <div class="shape" id="shape"></div>
+      </div>
+    </div>
+    
+    <!-- Cards Container -->
+    <div class="cards-container" id="cards-container">
+    <!-- Card 1: 1968 -->
+      <div class="milestone-card" data-year="1968">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">1968</h2>
+            <h3 class="event">Intel Founded</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/1.jpg" alt="Intel Founded in 1968" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Robert Noyce and Gordon Moore rename the newly formed company 
+                NM Electronics to Intel Corporation, laying the foundation for 
+                decades of technological innovation.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 2: 1971 -->
+      <div class="milestone-card" data-year="1971">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">1971</h2>
+            <h3 class="event">First Microprocessor</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/2.jpg" alt="First Microprocessor in 1971" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Intel debuts the 4004, the world's first commercial microprocessor, 
+                igniting the microprocessor revolution and propelling the future 
+                of computing devices.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 3: 1978 -->
+      <div class="milestone-card" data-year="1978">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">1978</h2>
+            <h3 class="event">8086 Processor</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/3.jpg" alt="8086 Processor in 1978" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Launch of the 8086 processor, establishing the x86 architecture 
+                that drives countless PCs and servers in the modern era.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 4: 1985 -->
+      <div class="milestone-card" data-year="1985">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">1985</h2>
+            <h3 class="event">386 Processor</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/4.jpg" alt="386 Processor in 1985" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Intel introduces the 386 processor with 32-bit architecture, 
+                ushering in a new era of performance and multitasking for 
+                personal computers.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 5: 2006 -->
+      <div class="milestone-card" data-year="2006">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">2006</h2>
+            <h3 class="event">Peak GHG Emissions</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/GHG-Emissions.png" alt="Peak GHG Emissions in 2006" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                This year marks Intel's highest annual greenhouse gas emissions 
+                for operations. Over subsequent years, Intel invests heavily in 
+                chemical abatement, renewable energy, and energy-efficient 
+                manufacturing to reverse this trend.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 6: 2020 -->
+      <div class="milestone-card" data-year="2020">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">2020</h2>
+            <h3 class="event">RISE Strategy</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/RISE-Strategy.png" alt="RISE Strategy in 2020" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+                Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+                progress on climate action, water stewardship, and waste reduction.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 7: 2022 -->
+      <div class="milestone-card" data-year="2022">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">2022</h2>
+            <h3 class="event">Net-Zero By 2040</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/net-zero.png" alt="Net-Zero By 2040 Goal in 2022" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Intel announces its commitment to achieve net-zero greenhouse 
+                gas emissions (Scope 1 and 2) across its global operations 
+                by 2040, building on years of environmental initiatives.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 8: 2023 -->
+      <div class="milestone-card" data-year="2023">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">2023</h2>
+            <h3 class="event">Renewable Electricity</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/renewable-electricity.png" alt="Renewable Electricity in 2023" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                The company achieves 99% renewable electricity usage worldwide, 
+                helping to drastically lower carbon emissions and driving progress 
+                toward Intel's long-term sustainability goals.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+    </div>
+
+    <!-- Card 9: 2024 -->
+      <div class="milestone-card" data-year="2024">
+        <div class="card-bg"></div>
+        <div class="card-content">
+          <div class="card-info">
+            <h2 class="year">2024</h2>
+            <h3 class="event">Sustainability Summit</h3>
+          </div>
+          <div class="card-visual">
+            <img src="img/sustainability-summit.png" alt="Sustainability Summit in 2024" class="card-image" />
+            <div class="card-description-overlay">
+              <p class="card-description">
+                Intel hosts its first Sustainability Summit, uniting suppliers, 
+                government officials, and industry leaders to collaborate on 
+                next-generation sustainable semiconductor manufacturing.
+              </p>
+            </div>
+          </div>
+          <div class="card-decorative-element"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Progress Indicators on right side -->
+    <div class="progress-indicator" id="progress-indicator">
+      <!-- Dots will be added by JavaScript -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM elements
+      const loadingScreen = document.getElementById('loading-screen');
+      const transitionOverlay = document.getElementById('transition-overlay');
+      const heroSection = document.getElementById('hero-section');
+      const timelineSection = document.getElementById('timeline-section');
+      const cornerLogo = document.getElementById('corner-logo');
+      const progressIndicator = document.getElementById('progress-indicator');
+      const cards = document.querySelectorAll('.milestone-card');
+      const horizontalText = document.getElementById('horizontal-text');
+      const rotatingObject = document.getElementById('rotating-object');
+      const shape = document.getElementById('shape');
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+      const floatingElements = document.querySelectorAll('.floating-element');
+      const techElements = document.getElementById('tech-elements');
+      const parallaxElements = document.querySelectorAll('.parallax-tech');
+      const scrollProgressBar = document.getElementById('scroll-progress-bar');
+      const scrollProgressIndicator = document.getElementById('scroll-progress-indicator');
+      const scrollHint = document.getElementById('scroll-hint');
+      const timelineBgText = document.getElementById('timeline-bg-text');
+      
+      // Variables
+      let currentCardIndex = 0;
+      const totalCards = cards.length;
+      let isAnimating = false;
+      let scrollY = 0;
+      let ticking = false;
+      let mouseX = 0;
+      let mouseY = 0;
+      let lastScrollTop = 0;
+      let scrollDirection = 'down';
+      let isAutoScrolling = false;
+      let isInTimelineSection = false;
+      let debounceTimeout = null;
+      
+      // States
+      const STATE_HERO = 'hero';
+      const STATE_HORIZONTAL = 'horizontal';
+      const STATE_TIMELINE = 'timeline';
+      let currentState = STATE_HERO;
+      
+      // Initialize scrolling text animations immediately
+      initializeScrollingText();
+      
+      // Hide loading screen after everything loads
+      window.addEventListener('load', function() {
+        setTimeout(() => {
+          loadingScreen.classList.add('hidden');
+          initializeExperience();
+        }, 1500);
+      });
+      
+      // Initialize scrolling text animations
+      function initializeScrollingText() {
+        // Pre-set animation speeds for the scrolling text
+        const bgTexts = document.querySelectorAll('#timeline-bg-text .intel-bg-text');
+        bgTexts.forEach((text, index) => {
+          // Set different speeds for each text line
+          const direction = index % 2 === 0 ? 1 : -1;
+          const speeds = [1, 1.2, 0.8];
+          text.style.animationPlaybackRate = speeds[index % 3] * direction;
+        });
+      }
+      
+      // Animate floating elements
+      function animateFloatingElements() {
+        floatingElements.forEach((el, index) => {
+          const delay = index * 0.5;
+          const duration = 3 + index;
+          
+          el.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        });
+      }
+      
+      // Initialize card background patterns
+      function initCardBackgrounds() {
+        cards.forEach((card, index) => {
+          const bg = card.querySelector('.card-bg');
+          
+          // Different patterns for different eras
+          if (index < 4) {
+            // Vintage pattern for early years
+            bg.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%237b9e89\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")';
+          } else {
+            // Modern grid for later years
+            bg.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%235d8a99\' fill-opacity=\'0.2\'%3E%3Cpath d=\'M0 0h20v20H0V0zm10 17L3 10l3-3 4 4 4-4 3 3-7 7z\'/%3E%3C/g%3E%3C/svg%3E")';
+          }
+        });
+      }
+      
+      // Add progress indicator dots
+      function addProgressDots() {
+        for (let i = 0; i < totalCards; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('progress-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.dataset.index = i;
+          
+          // Add click event to navigate
+          dot.addEventListener('click', function() {
+            navigateTo(parseInt(this.dataset.index));
+          });
+          
+          progressIndicator.appendChild(dot);
+        }
+      }
+      
+      // Update progress dots
+      function updateProgressDots() {
+        const dots = document.querySelectorAll('.progress-dot');
+        dots.forEach((dot, index) => {
+          if (index === currentCardIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      // Custom cursor
+      function initCustomCursor() {
+        document.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        // Update cursor position
+        function updateCursor() {
+          cursor.style.left = `${mouseX}px`;
+          cursor.style.top = `${mouseY}px`;
+          
+          // Add slight delay to follower for smooth effect
+          cursorFollower.style.left = `${mouseX}px`;
+          cursorFollower.style.top = `${mouseY}px`;
+          
+          requestAnimationFrame(updateCursor);
+        }
+        
+        updateCursor();
+
+        // Change cursor on interactive elements
+        const interactiveElements = document.querySelectorAll('button, a, [role="button"], .milestone-card, .progress-dot');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+          });
+        });
+      }
+      
+      // Initialize timeline experience
+      function initializeExperience() {
+        initCardBackgrounds();
+        addProgressDots();
+        positionCards();
+        initCustomCursor();
+        animateFloatingElements();
+        initParallaxEffect();
+        initTouchInteractions();
+        
+        // Set initial states
+        updateCardState();
+        
+        // Event Listeners
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        
+        // Mouse move for interactive shape
+        document.addEventListener('mousemove', function(e) {
+          if (currentState === STATE_TIMELINE) {
+            updateShapePosition(e);
+          }
+        });
+        
+        // Keyboard Navigation
+        document.addEventListener('keydown', function(e) {
+          if (currentState === STATE_TIMELINE) {
+            if (e.key === 'ArrowRight') {
+              navigateNext();
+            } else if (e.key === 'ArrowLeft') {
+              navigatePrev();
+            }
+          }
+        });
+        
+        // Enter timeline mode immediately when clicked
+        document.addEventListener('click', function(e) {
+          // Find if any progress dot was clicked
+          const progressDot = e.target.closest('.progress-dot');
+          if (progressDot && !isInTimelineSection) {
+            enterTimelineMode();
+          }
+        });
+        
+        // Force an initial scroll event to set up the right view
+        setTimeout(() => {
+          window.dispatchEvent(new Event('scroll'));
+        }, 500);
+      }
+      
+      // Initialize parallax effect for tech elements
+      function initParallaxEffect() {
+        // Track last scroll position for calculating scroll speed
+        let lastScrollY = window.pageYOffset;
+        let scrollSpeed = 0;
+        const rotateElements = document.querySelectorAll('.rotate-element');
+        
+        // For mouse parallax
+        document.addEventListener('mousemove', function(e) {
+          if (currentState === STATE_HORIZONTAL) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            parallaxElements.forEach(function(element) {
+              const speed = element.getAttribute('data-speed');
+              const moveX = (x - 0.5) * 100 * speed;
+              const moveY = (y - 0.5) * 100 * speed;
+              
+              // Don't overwrite rotation for rotate-elements
+              if (!element.classList.contains('rotate-element')) {
+                element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+              } else {
+                element.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${element.dataset.rotation || 0}deg)`;
+              }
+            });
+          }
+        });
+        
+        // For scroll-based rotation
+        window.addEventListener('scroll', function() {
+          if (currentState === STATE_HORIZONTAL) {
+            const currentScrollY = window.pageYOffset;
+            scrollSpeed = Math.abs(currentScrollY - lastScrollY);
+            lastScrollY = currentScrollY;
+            
+            // Limit the speed factor to avoid too fast rotations
+            const speedFactor = Math.min(scrollSpeed * 2, 20);
+            
+            rotateElements.forEach(function(element, index) {
+              // If no rotation data yet, initialize it
+              if (!element.dataset.rotation) {
+                element.dataset.rotation = 0;
+                element.dataset.direction = index % 2 === 0 ? 1 : -1; // Alternate direction
+              }
+              
+              // Update rotation based on scroll speed
+              let currentRotation = parseFloat(element.dataset.rotation);
+              currentRotation += speedFactor * parseFloat(element.dataset.direction);
+              element.dataset.rotation = currentRotation;
+              
+              // Apply both translation and rotation
+              const speed = element.getAttribute('data-speed');
+              const x = parseFloat(element.style.transform.split('translate(')[1]?.split('px')[0] || 0);
+              const y = parseFloat(element.style.transform.split(', ')[1]?.split('px')[0] || 0);
+              
+              element.style.transform = `translate(${x}px, ${y}px) rotate(${currentRotation}deg)`;
+            });
+          }
+        });
+      }
+      
+      // Initialize touch interactions for card visuals
+      function initTouchInteractions() {
+        const cardVisuals = document.querySelectorAll('.card-visual');
+        
+        cardVisuals.forEach(visual => {
+          // Add touch start event
+          visual.addEventListener('touchstart', function(e) {
+            // Remove active class from all other card visuals
+            cardVisuals.forEach(v => {
+              if (v !== visual) {
+                v.classList.remove('touch-active');
+              }
+            });
+            
+            // Toggle active class on this card visual
+            visual.classList.toggle('touch-active');
+            
+            // Prevent this touch from triggering a click event
+            e.preventDefault();
+          });
+          
+          // Handle click events for non-touch devices
+          visual.addEventListener('click', function() {
+            // Only handle click on non-touch devices
+            if (!('ontouchstart' in window)) {
+              visual.classList.toggle('touch-active');
+            }
+          });
+        });
+        
+        // Close all overlays when clicking outside
+        document.addEventListener('touchstart', function(e) {
+          if (!e.target.closest('.card-visual')) {
+            cardVisuals.forEach(v => v.classList.remove('touch-active'));
+          }
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.card-visual')) {
+            cardVisuals.forEach(v => v.classList.remove('touch-active'));
+          }
+        });
+      }
+      
+      // Enter timeline mode directly
+      function enterTimelineMode() {
+        // Skip to timeline section
+        currentState = STATE_TIMELINE;
+        isInTimelineSection = true;
+        
+        // Update UI
+        heroSection.style.opacity = 0;
+        heroSection.style.visibility = 'hidden';
+        
+        // Hide tech elements and horizontal text
+        horizontalText.classList.remove('active');
+        techElements.classList.remove('active');
+        
+        // Show timeline elements
+        timelineSection.classList.add('active');
+        cornerLogo.classList.add('active');
+        progressIndicator.classList.add('active');
+        
+        // Show timeline background text
+        document.getElementById('timeline-bg-text').classList.add('active');
+        
+        // Hide scroll progress
+        scrollProgressBar.classList.remove('active');
+        scrollHint.classList.remove('active');
+        
+        // Ensure all SVG elements are properly hidden
+        const svgElements = document.querySelectorAll('.parallax-tech');
+        svgElements.forEach(element => {
+          element.style.opacity = 0;
+          element.style.visibility = 'hidden';
+        });
+        
+        // Set initial card
+        updateCardState();
+      }
+      
+      // Exit timeline mode
+      function exitTimelineMode() {
+        currentState = STATE_HORIZONTAL;
+        isInTimelineSection = false;
+        
+        // Update UI
+        timelineSection.classList.remove('active');
+        horizontalText.classList.add('active');
+        techElements.classList.add('active');
+        
+        // Hide timeline background text
+        document.getElementById('timeline-bg-text').classList.remove('active');
+        
+        // Restore visibility of SVG elements
+        const svgElements = document.querySelectorAll('.parallax-tech');
+        svgElements.forEach(element => {
+          element.style.opacity = '';
+          element.style.visibility = '';
+        });
+        
+        // Scroll back to horizontal text section
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const targetScrollY = 0.15 * scrollHeight; // Position for horizontal text
+        
+        window.scrollTo({
+          top: targetScrollY,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Handle wheel events for better card navigation
+      function handleWheel(e) {
+        // Static counter for horizontal scrolls
+        if (!window.horizontalScrollCount) {
+          window.horizontalScrollCount = 0;
+        }
+        
+        // Card scroll counter
+        if (!window.cardScrollCount) {
+          window.cardScrollCount = 0;
+        }
+        
+        // If we're in horizontal text mode and scrolling down
+        if (currentState === STATE_HORIZONTAL && e.deltaY > 0) {
+          window.horizontalScrollCount++;
+          
+          // Make SVGs react to scrolling
+          updateSVGAnimationSpeed(Math.abs(e.deltaY));
+          
+          // Only enter timeline mode after 30 scroll events
+          if (window.horizontalScrollCount > 30) {
+            window.horizontalScrollCount = 0;
+            enterTimelineMode();
+          }
+          e.preventDefault();
+          return;
+        }
+        
+        // Reset counter when scrolling up in horizontal mode
+        if (currentState === STATE_HORIZONTAL && e.deltaY < 0) {
+          window.horizontalScrollCount = Math.max(0, window.horizontalScrollCount - 1);
+          
+          // Make SVGs react to scrolling in reverse direction
+          updateSVGAnimationSpeed(Math.abs(e.deltaY));
+        }
+        
+        if (currentState === STATE_TIMELINE) {
+          // Prevent default scrolling when in timeline
+          e.preventDefault();
+          
+          // Don't process if animation is already in progress
+          if (isAnimating) return;
+          
+          // Multiple scrolls required per card (30 scrolls, same as horizontal section)
+          const scrollsNeededPerCard = 30;
+          
+          // Handle scrolling down
+          if (e.deltaY > 0) {
+            window.cardScrollCount++;
+            
+            // Show visual feedback
+            showCardProgress(window.cardScrollCount / scrollsNeededPerCard);
+            
+            // Only move to next card after enough scrolls
+            if (window.cardScrollCount >= scrollsNeededPerCard) {
+              window.cardScrollCount = 0;
+              hideCardProgress();
+              
+              // Scrolling down
+              if (currentCardIndex < totalCards - 1) {
+                navigateNext();
+              }
+            }
+          } 
+          // Handle scrolling up
+          else if (e.deltaY < 0) {
+            window.cardScrollCount--;
+            
+            // Show visual feedback
+            showCardProgress(Math.abs(window.cardScrollCount) / scrollsNeededPerCard);
+            
+            // Only move to previous card after enough scrolls
+            if (window.cardScrollCount <= -scrollsNeededPerCard) {
+              window.cardScrollCount = 0;
+              hideCardProgress();
+              
+              // Scrolling up
+              if (currentCardIndex > 0) {
+                navigatePrev();
+              } else if (currentCardIndex === 0) {
+                // Only exit timeline mode if we're at the first card and scrolled up enough
+                exitTimelineMode();
+              }
+            }
+          }
+        }
+      }
+      
+      // Function to show card progress
+      function showCardProgress(progress) {
+        // Limit progress to 0-1 range
+        progress = Math.min(1, Math.max(0, progress));
+        
+        // Get the current active card
+        const activeCard = document.querySelector('.milestone-card.active');
+        if (!activeCard) return;
+        
+        // Add subtle zoom effect to card
+        const cardContent = activeCard.querySelector('.card-content');
+        if (cardContent) {
+          const scale = 1 + (progress * 0.05);
+          cardContent.style.transform = `scale(${scale})`;
+        }
+        
+        // Update Intel background elements based on scroll progress
+        updateIntelBackgroundElements(progress);
+        
+        // Create/update progress bar
+        let progressBar = document.getElementById('card-progress-bar');
+        if (!progressBar) {
+          progressBar = document.createElement('div');
+          progressBar.id = 'card-progress-bar';
+          progressBar.style.position = 'fixed';
+          progressBar.style.bottom = '20px';
+          progressBar.style.left = '50%';
+          progressBar.style.transform = 'translateX(-50%)';
+          progressBar.style.width = '200px';
+          progressBar.style.height = '4px';
+          progressBar.style.backgroundColor = 'rgba(0, 104, 181, 0.2)';
+          progressBar.style.borderRadius = '2px';
+          progressBar.style.zIndex = '100';
+          
+          const progressFill = document.createElement('div');
+          progressFill.id = 'card-progress-fill';
+          progressFill.style.height = '100%';
+          progressFill.style.width = '0%';
+          progressFill.style.backgroundColor = 'var(--accent-green)';
+          progressFill.style.borderRadius = '2px';
+          progressFill.style.transition = 'width 0.1s ease-out';
+          
+          progressBar.appendChild(progressFill);
+          document.body.appendChild(progressBar);
+        }
+        
+        // Update progress fill
+        const progressFill = document.getElementById('card-progress-fill');
+        if (progressFill) {
+          progressFill.style.width = `${progress * 100}%`;
+        }
+      }
+      
+      // Function to update Intel background elements
+      function updateIntelBackgroundElements(progress) {
+        // Get all Intel background text elements
+        const bgTexts = document.querySelectorAll('#timeline-bg-text .intel-bg-text');
+        const accents = document.querySelectorAll('.intel-brand-accent');
+        
+        // Increase opacity as progress increases
+        const baseOpacity = 0.15;
+        const maxOpacity = 0.25; // Increased maximum opacity
+        const newOpacity = baseOpacity + (progress * (maxOpacity - baseOpacity));
+        
+        // Adjust text scrolling speed based on progress
+        bgTexts.forEach((text, index) => {
+          // Increase opacity
+          text.style.opacity = newOpacity;
+          
+          // Adjust animation speed
+          const direction = index % 2 === 0 ? 1 : -1;
+          const baseSpeed = 1;
+          const maxSpeed = 3; // Increased maximum speed
+          const speedFactor = baseSpeed + (progress * (maxSpeed - baseSpeed));
+          
+          text.style.animationPlaybackRate = speedFactor * direction;
+          
+          // Add a slight scale effect to make text more prominent
+          const scale = 1 + (progress * 0.05);
+          text.style.transform = `scale(${scale})`;
+        });
+        
+        // Adjust accent elements
+        accents.forEach((accent, index) => {
+          // Make accents more visible with progress
+          const accentBaseOpacity = 0.15;
+          const accentMaxOpacity = 0.3; // Increased maximum opacity
+          const newAccentOpacity = accentBaseOpacity + (progress * (accentMaxOpacity - accentBaseOpacity));
+          
+          accent.style.opacity = newAccentOpacity;
+          
+          // Add subtle movement based on index
+          if (index % 2 === 0) {
+            accent.style.transform = `translateX(${progress * 10}px)`;
+          } else {
+            accent.style.transform = `translateY(${progress * 10}px)`;
+          }
+        });
+      }
+      
+      // Function to reset Intel background elements
+      function resetIntelBackgroundElements() {
+        const bgTexts = document.querySelectorAll('#timeline-bg-text .intel-bg-text');
+        const accents = document.querySelectorAll('.intel-brand-accent');
+        
+        // Reset text elements
+        bgTexts.forEach(text => {
+          text.style.opacity = '';
+          text.style.animationPlaybackRate = '';
+          text.style.transform = ''; // Reset transform property
+        });
+        
+        // Reset accent elements
+        accents.forEach(accent => {
+          accent.style.opacity = '';
+          accent.style.transform = '';
+        });
+      }
+      
+      // Function to hide card progress
+      function hideCardProgress() {
+        const progressBar = document.getElementById('card-progress-bar');
+        if (progressBar) {
+          progressBar.style.opacity = '0';
+          setTimeout(() => {
+            if (progressBar.parentNode) {
+              progressBar.parentNode.removeChild(progressBar);
+            }
+          }, 300);
+        }
+        
+        // Reset card transform
+        const cardContent = document.querySelector('.milestone-card.active .card-content');
+        if (cardContent) {
+          cardContent.style.transform = '';
+        }
+        
+        // Reset Intel background elements
+        resetIntelBackgroundElements();
+      }
+      
+      // New function to control SVG animation speed based on scroll
+      function updateSVGAnimationSpeed(scrollSpeed) {
+        // Calculate a reasonable playback rate based on scroll speed
+        // Higher range for processors (0.5 to 4) for more dramatic effect
+        const processorSpeed = Math.min(4, Math.max(0.5, 1 + scrollSpeed / 80));
+        // Standard range for circuits (0.5 to 3)
+        const circuitSpeed = Math.min(3, Math.max(0.5, 1 + scrollSpeed / 100));
+        
+        // Get all the SVG elements
+        const processors = document.querySelectorAll('.floating-processor-1, .floating-processor-2');
+        const circuits = document.querySelectorAll('.floating-circuit-1, .floating-circuit-2');
+        
+        // Update animation speed for each element
+        processors.forEach(element => {
+          element.style.animationPlaybackRate = processorSpeed;
+        });
+        
+        circuits.forEach(element => {
+          element.style.animationPlaybackRate = circuitSpeed;
+        });
+        
+        // Create a more dramatic visual effect for processors
+        processors.forEach(element => {
+          // Add glow effect that intensifies with scroll speed
+          const glowIntensity = Math.min(0.8, 0.3 + (processorSpeed - 1) * 0.15);
+          const glowSize = Math.min(60, 20 + (processorSpeed - 1) * 10);
+          element.style.boxShadow = `0 0 ${glowSize}px rgba(0, 199, 253, ${glowIntensity})`;
+          
+          // Pulse effect
+          element.style.transform = `scale(${1 + (processorSpeed - 1) * 0.15})`;
+          
+          // Reset transform after a short delay
+          setTimeout(() => {
+            element.style.transform = '';
+            // Gradually fade the glow back to normal
+            setTimeout(() => {
+              element.style.boxShadow = '';
+            }, 500);
+          }, 300);
+        });
+      }
+      
+      // Handle scroll events
+      function handleScroll() {
+        // Skip if we're in the timeline with manual navigation
+        if (isInTimelineSection) return;
+        
+        scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Determine scroll direction
+        scrollDirection = (scrollY > lastScrollTop) ? 'down' : 'up';
+        lastScrollTop = scrollY;
+        
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            updateBasedOnScroll(scrollY);
+            ticking = false;
+          });
+          
+          ticking = true;
+        }
+      }
+      
+      // Update UI based on scroll position
+      function updateBasedOnScroll(scrollY) {
+        // Skip if we're already in timeline mode with cards
+        if (isInTimelineSection) return;
+        
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = scrollY / scrollHeight;
+        
+        // Update scroll progress indicator
+        if (currentState === STATE_HORIZONTAL) {
+          // Calculate progress within the horizontal section (0.1 to 0.6 normalized to 0-100)
+          const horizontalProgress = Math.min(100, Math.max(0, (scrollProgress - 0.1) / 0.5 * 100));
+          scrollProgressIndicator.style.width = `${horizontalProgress}%`;
+        }
+        
+        // Rotate object based on scroll
+        rotatingObject.style.transform = `rotate(${scrollY * 0.05}deg)`;
+        
+        // Transition between sections based on scroll position
+        if (scrollProgress < 0.1) {
+          // In hero section
+          if (currentState !== STATE_HERO) {
+            transitionToHero();
+          }
+          
+          // Parallax effect on hero content
+          const heroContent = document.querySelector('.hero-content');
+          heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+          
+          const fadeStart = 0.05;
+          if (scrollProgress > fadeStart) {
+            const fadeValue = 1 - (scrollProgress - fadeStart) * 20;
+            heroSection.style.opacity = Math.max(0, fadeValue);
+          } else {
+            heroSection.style.opacity = 1;
+          }
+          
+          // Hide scroll progress
+          scrollProgressBar.classList.remove('active');
+          scrollHint.classList.remove('active');
+          
+        } else if (scrollProgress < 0.6) {
+          // Extended horizontal text section (increased from 0.25 to 0.6)
+          if (currentState !== STATE_HORIZONTAL) {
+            transitionToHorizontal();
+          }
+          
+        } 
+        // Removed automatic transition to timeline based on scroll position
+        // Now it only transitions after multiple wheel events
+      }
+      
+      // Transition to hero
+      function transitionToHero() {
+        currentState = STATE_HERO;
+        isInTimelineSection = false;
+        
+        heroSection.style.opacity = 1;
+        heroSection.style.visibility = 'visible';
+        
+        horizontalText.classList.remove('active');
+        techElements.classList.remove('active');
+        timelineSection.classList.remove('active');
+        cornerLogo.classList.remove('active');
+        progressIndicator.classList.remove('active');
+      }
+      
+      // Transition to horizontal text
+      function transitionToHorizontal() {
+        currentState = STATE_HORIZONTAL;
+        isInTimelineSection = false;
+        
+        heroSection.style.opacity = 0;
+        heroSection.style.visibility = 'hidden';
+        timelineSection.classList.remove('active');
+        
+        horizontalText.classList.add('active');
+        techElements.classList.add('active');
+        cornerLogo.classList.add('active');
+        scrollProgressBar.classList.add('active');
+        scrollHint.classList.add('active');
+      }
+      
+      // Update shape position based on mouse movement
+      function updateShapePosition(e) {
+        const moveX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2) * 15;
+        const moveY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2) * 15;
+        
+        shape.style.transform = `rotateX(${-moveY}deg) rotateY(${moveX}deg)`;
+      }
+      
+      // Position cards in 3D space
+      function positionCards() {
+        cards.forEach((card, index) => {
+          if (index === currentCardIndex) {
+            card.classList.add('active');
+            card.classList.remove('prev', 'next');
+          } else if (index < currentCardIndex) {
+            card.classList.add('prev');
+            card.classList.remove('active', 'next');
+          } else {
+            card.classList.add('next');
+            card.classList.remove('active', 'prev');
+          }
+        });
+      }
+      
+      // Update card state
+      function updateCardState() {
+        positionCards();
+        updateProgressDots();
+      }
+      
+      // Navigate to a specific card
+      function navigateTo(index, useOverlay = true) {
+        if (isAnimating || index === currentCardIndex || index < 0 || index >= totalCards) return;
+        
+        isAnimating = true;
+        
+        // Reset Intel background elements when navigating
+        resetIntelBackgroundElements();
+        
+        // Use overlay transition for smoother effect when requested
+        if (useOverlay) {
+          transitionOverlay.classList.add('active');
+          
+          setTimeout(() => {
+            currentCardIndex = index;
+            updateCardState();
+            
+            setTimeout(() => {
+              transitionOverlay.classList.remove('active');
+              isAnimating = false;
+            }, 500);
+          }, 500);
+        } else {
+          // Immediate transition without flashing
+          currentCardIndex = index;
+          updateCardState();
+          
+          setTimeout(() => {
+            isAnimating = false;
+          }, 800); // Give enough time for animation to complete
+        }
+      }
+      
+      // Navigate to previous card
+      function navigatePrev() {
+        if (currentCardIndex > 0) {
+          navigateTo(currentCardIndex - 1);
+        }
+      }
+      
+      // Navigate to next card
+      function navigateNext() {
+        if (currentCardIndex < totalCards - 1) {
+          navigateTo(currentCardIndex + 1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
